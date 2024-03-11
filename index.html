@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>cat</title>
+  
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+      background-color: gray
+      
+    }
+    div {
+      width: 70%;
+      height: auto;
+     /* text-align: center;*/
+      background-color: gainsboro;
+      margin: auto;
+     margin-bottom: 20px;
+    }
+    .image {
+      padding:20px 80px;
+      width: 100%;
+      height: 350px;
+      margin: auto;
+      object-fit: cover;
+      max-width: 500px;
+    }
+    h2,p{
+      margin: 10px 25px;
+      
+    }
+    .button {
+      text-decoration: none;
+      font-size: 20px;
+      color: whitesmoke;
+      background-color: gray;
+      margin: 20px;
+      padding: 5px 10px;
+      display: inline-block;
+    }
+    header{
+      position: fixed;
+      width: 100%;
+      padding: 20px;
+      top: 0px;
+      background-color: rgb(57 ,57 ,57)
+    }
+    a{
+      text-decoration: none;
+     color:white;
+     display:inline-block;
+    text-align:center;
+   padding: 0px 15px;
+    }
+    .headers{
+      font-size: 30px;
+      font-weight: 120;
+    }
+    .header {
+      font-weight: 600;
+    }
+    .lest{
+      margin-top: 70px;
+    }
+    footer{
+      text-align: center;
+      background-color: green;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="headers" href="#">Home</a>
+    <a class="header" href="#">Contact</a>
+    <a class="header" href="#">About</a>
+  </header>
+  <div class="lest">
+    <img class="image" src="/pictur/1_1.jpg">
+    <h2>Title</h2>
+    <p>Content</p>
+    <a class="button" href="#">Button</a>
+  </div>
+  <div>
+    <img class="image" src="/pictur/cat-cat-cat.jpg">
+    <h2>Title</h2>
+    <p>Content</p>
+    <a class="button" href="#">Button</a>
+  </div>
+  <div>
+    <img class="image" src="/pictur/cats.jpg">
+    <h2>Title</h2>
+    <p>Content</p>
+    <a class="button" href="#">Button</a>
+  </div>
+   <div>
+     <img class="image" src="/pictur/Taurineforcat-1024x681.jpg">
+     <h2>Title</h2>
+     <p>Content</p>
+     <a class="button" href="#">Button</a>
+   </div>
+  <footer>
+    <h4>gmail : toaiseriesandcat@gmail.com</h4>
+    <h4>made 2023.</h4>
+  </footer>
+  
+<script>
+  // เมื่อมีการเลื่อนหน้าเว็บ (scroll) ให้ทำงานฟังก์ชันต่อไปนี้
+  window.addEventListener('scroll', function() {
+    // หา DOM element ของเเถบ header
+    const header = document.querySelector('header');
+
+    // กำหนดระดับที่เมื่อเลื่อนลงไปถึงเริ่มซ่อน header
+    const scrollThreshold = 200;
+
+    // หาตำแหน่ง scroll ปัจจุบัน
+    const scrollPosition = window.scrollY;
+
+    // ตรวจสอบว่าเลื่อนลงไปถึงระดับที่กำหนดหรือไม่
+    if (scrollPosition > scrollThreshold) {
+      // คำนวณค่า opacity เพื่อทำให้เเถบหายไปล่ะทีละน้อยเมื่อเลื่อนลง
+      const opacity = 1 - (scrollPosition - scrollThreshold) / scrollThreshold;
+      // ตั้งค่าค่า opacity ให้กับเเถบ header ตามการคำนวณ
+      header.style.opacity = opacity > 0 ? opacity : 0;
+    } else {
+      // ถ้ายังไม่ถึงระดับที่กำหนด ให้แสดง header อย่างปกติ (opacity เป็น 1)
+      header.style.opacity = '1';
+    }
+  });
+</script>
+
+</body>
+</html>
